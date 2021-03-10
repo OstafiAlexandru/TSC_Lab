@@ -4,5 +4,7 @@
 !readme.md
 !sim
 !.gitkeep
+!*.bat
+!*tools
 !*.sv
 !*/
