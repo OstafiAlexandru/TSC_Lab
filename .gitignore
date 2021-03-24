@@ -2,6 +2,9 @@
 !.gitattributes
 !.gitignore
 !readme.md
+!sim
 !.gitkeep
+!*.bat
+!*tools
 !*.sv
 !*/
