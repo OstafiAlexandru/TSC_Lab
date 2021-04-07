@@ -33,4 +33,3 @@ clocking cb @(posedge clk);
 endclocking
 
 endinterface: tb_ifc
-
