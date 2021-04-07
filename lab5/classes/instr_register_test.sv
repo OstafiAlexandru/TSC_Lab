@@ -26,10 +26,10 @@ module instr_register_test (tb_ifc io);  // interface port
 
   function void randomize_transaction();
     static int temp = 0;
-    operand_a     <= $random(seed)%16;                 // between -15 and 15
-    operand_b     <= $unsigned($random)%16;            // between 0 and 15
-    opcode        <= opcode_t'($unsigned($random)%8);  // between 0 and 7, cast to opcode_t type
-    write_pointer <= temp++;
+    operand_a     = $random(seed)%16;                 // between -15 and 15
+    operand_b     = $unsigned($random)%16;            // between 0 and 15
+    opcode        = opcode_t'($unsigned($random)%8);  // between 0 and 7, cast to opcode_t type
+    write_pointer = temp++;
   endfunction : randomize_transaction
 
   function void print_transaction;
@@ -61,16 +61,16 @@ module instr_register_test (tb_ifc io);  // interface port
       vifc.cb.reset_n         <= 1'b1;       // deassert reset_n (active low)
 
       $display("\nWriting values to register stack...");
-      @(vifc.cb) vifc.cb.load_en <= 1'b1;      // enable writing to register
+      @(vifc.cb) vifc.load_en <= 1'b1;      // enable writing to register
       repeat (3) begin
         @(vifc.cb) tr.randomize_transaction();
+        vifc.cb.operand_a <= tr.operand_a;
+        vifc.cb.operand_b <= tr.operand_b;
+        vifc.cb.opcode <= tr.opcode;
+        vifc.cb.write_pointer <= tr.write_pointer;
         @(vifc.cb) tr.print_transaction();
-        vifc.operand_a <= tr.operand_a;
-        vifc.operand_b <= tr.operand_b;
-        vifc.opcode <= tr.opcode;
-        vifc.write_pointer <= tr.write_pointer;
       end
-      @(vifc.cb) vifc.cb.load_en <= 1'b0;      // turn-off writing to register
+      @(vifc.cb) vifc.load_en <= 1'b0;      // turn-off writing to register
 
     endtask
   endclass: Driver
