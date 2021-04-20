@@ -16,7 +16,7 @@ module top;
 
   // instantiate testbench and connect ports
   instr_register_test test (
-    .clk(test_clk),
+    .clk(ifc.test_clk),
     .load_en(ifc.load_en),
     .reset_n(ifc.reset_n),
     .operand_a(ifc.operand_a),
