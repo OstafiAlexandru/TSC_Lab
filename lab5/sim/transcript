@@ -15,7 +15,7 @@
 # do run.do
 # 1
 # Model Technology ModelSim SE-64 vlog 10.6d Compiler 2018.02 Feb 24 2018
-# Start time: 17:17:58 on Apr 07,2021
+# Start time: 15:49:05 on Apr 19,2021
 # vlog -reportprogress 300 -sv -timescale 1ps/1ps -work work -f sources.txt 
 # -- Compiling package instr_register_pkg
 # -- Compiling module instr_register
@@ -26,10 +26,10 @@
 # 
 # Top level modules:
 # 	top
-# End time: 17:17:58 on Apr 07,2021, Elapsed time: 0:00:00
+# End time: 15:49:05 on Apr 19,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -novopt -quiet -nocoverage "+notimingchecks" "+nowarnTSCALE" -sva top 
-# Start time: 17:17:58 on Apr 07,2021
+# Start time: 15:49:05 on Apr 19,2021
 # ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
 # Refreshing C:/Users/Alex Ostafi/OneDrive/Desktop/TSC_Lab/lab5/sim/work.top
 # Refreshing C:/Users/Alex Ostafi/OneDrive/Desktop/TSC_Lab/lab5/sim/work.instr_register_pkg
@@ -80,5 +80,5 @@
 # Break in Module instr_register_test at ../classes/instr_register_test.sv line 116
 # MACRO ./run.do PAUSED at line 45
 add wave -position insertpoint sim:/top/dut/*
-# End time: 17:24:06 on Apr 07,2021, Elapsed time: 0:06:08
+# End time: 15:49:41 on Apr 19,2021, Elapsed time: 0:00:36
 # Errors: 0, Warnings: 1

@@ -30,3 +30,4 @@ interface tb_ifc (input logic clk);
   endclocking: cb
 
 endinterface: tb_ifc
+
