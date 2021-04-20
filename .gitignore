@@ -5,6 +5,6 @@
 !sim
 !.gitkeep
 !*.bat
-!*tools
+*tools
 !*.sv
 !*/
